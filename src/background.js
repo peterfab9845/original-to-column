@@ -1,9 +1,6 @@
 "use strict";
 
 async function init() {
-  // create window listener for custom columns
-  messenger.HeaderColumns.addWindowListener();
-
   // set up customDBHeaders
   await addCustomDBHeader("X-Original-To");
   messenger.ex_runtime.onDisable.addListener(removeCustomDBHeader.bind(null, "X-Original-To"));
