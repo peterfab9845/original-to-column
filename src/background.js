@@ -10,7 +10,11 @@ async function init() {
     "nodeType": "header",
     "headerName": "X-Original-To"
   };
-  messenger.HeaderColumns.registerColumn("originalToColumn", "X-Original-To", "Sort by X-Original-To header", originalToTree, false);
+  let originalToOptions = {
+    "sortNumeric": false,
+    "useDBHeaders": true
+  }
+  messenger.HeaderColumns.registerColumn("originalToColumn", "X-Original-To", "Sort by X-Original-To header", originalToTree, originalToOptions);
 }
 init();
 

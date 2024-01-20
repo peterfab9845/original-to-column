@@ -1,3 +1,4 @@
 [submodule "src/api/header-columns-api"]
-	path = src/api/header-columns-api
-	url = https://github.com/peterfab9845/header-columns-api
+    path = src/api/header-columns-api
+    url = https://github.com/peterfab9845/header-columns-api
+    branch = messages-api
