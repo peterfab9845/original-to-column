@@ -29,12 +29,12 @@
         "script": "api/ex_runtime/parent.js"
       }
     },
-    "HeaderColumns": {
-      "schema": "api/header-columns-api/schema.json",
+    "OriginalToColumn": {
+      "schema": "api/OriginalToColumn/schema.json",
       "parent": {
         "scopes": ["addon_parent"],
-        "paths": [["HeaderColumns"]],
-        "script": "api/header-columns-api/implementation.js"
+        "paths": [["OriginalToColumn"]],
+        "script": "api/OriginalToColumn/implementation.js"
       }
     }
   },
