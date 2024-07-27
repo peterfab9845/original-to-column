@@ -43,12 +43,11 @@
       return {
         OriginalToColumn: {
           /**
-           * @param {string} id - the id of the custom column
            * @param {string} name  - the name of the custom column
            * @param {string} tooltip - currently unsupported
            */
-          async addColumn(id, name, tooltip) {
-            ThreadPaneColumns.addCustomColumn(id, {
+          async addColumn(name, tooltip) {
+            ThreadPaneColumns.addCustomColumn("originalToColumn", {
               name: name,
               hidden: true,
               icon: false,
@@ -58,18 +57,15 @@
             });
           },
   
-          /**
-           * @param {string} id - the id of the custom column
-           */
-          async removeColumn(id) {
-            ThreadPaneColumns.removeCustomColumn(id);
+          async removeColumn() {
+            ThreadPaneColumns.removeCustomColumn("originalToColumn");
           }
         }
       }
     }
   
     close() {
-      ThreadPaneColumns.removeCustomColumn("spam-score-icon");
+      ThreadPaneColumns.removeCustomColumn("originalToColumn");
     }
   }
 

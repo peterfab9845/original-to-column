@@ -9,11 +9,6 @@
         "async": false,
         "parameters": [
           {
-            "name": "id",
-            "type": "string",
-            "description": "The ID for the column element. Must be unique."
-          },
-          {
             "name": "label",
             "type": "string",
             "description": "The label for the column header."
@@ -31,11 +26,6 @@
         "description": "Remove a custom column",
         "async": false,
         "parameters": [
-          {
-            "name": "id",
-            "type": "string",
-            "description": "The ID of the column element to unregister."
-          }
         ]
       }
     ]
