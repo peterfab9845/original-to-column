@@ -1,26 +1,36 @@
 /*
  * This file is provided by the addon-developer-support repository at
- * https://github.com/thundernest/addon-developer-support
+ * https://github.com/thunderbird/addon-developer-support
  *
- * Version: 1.8
- * reworked onChanged event to allow registering multiple branches
+ * Version 1.11
+ * - adjusted to TB128 (no longer loading Services and ExtensionCommon)
+ * - use ChromeUtils.importESModule()
+ * 
+ * Version 1.10
+ * - adjusted to Thunderbird 115 (Services is now in globalThis)
  *
- * Version: 1.7
- * add onChanged event
+ * Version 1.9
+ * - fixed fallback issue reported by Axel Grude
  *
- * Version: 1.6
- * add setDefaultPref()
+ * Version 1.8
+ * - reworked onChanged event to allow registering multiple branches
  *
- * Version: 1.5
- * replace set/getCharPref by set/getStringPref to fix encoding issue
+ * Version 1.7
+ * - add onChanged event
  *
- * Version: 1.4
+ * Version 1.6
+ * - add setDefaultPref()
+ *
+ * Version 1.5
+ * - replace set/getCharPref by set/getStringPref to fix encoding issue
+ *
+ * Version 1.4
  * - setPref() function returns true if the value could be set, otherwise false
  *
- * Version: 1.3
+ * Version 1.3
  * - add setPref() function
  *
- * Version: 1.2
+ * Version 1.2
  * - add getPref() function
  *
  * Author: John Bieling (john@thunderbird.net)
@@ -30,14 +40,13 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-var { ExtensionCommon } = ChromeUtils.import(
-  "resource://gre/modules/ExtensionCommon.jsm"
-);
-var { ExtensionUtils } = ChromeUtils.import(
-  "resource://gre/modules/ExtensionUtils.jsm"
-);
-var { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
+/* global Services, ExtensionCommon */
 
+"use strict";
+
+var { ExtensionUtils } = ChromeUtils.importESModule(
+  "resource://gre/modules/ExtensionUtils.sys.mjs"
+);
 var { ExtensionError } = ExtensionUtils;
 
 var LegacyPrefs = class extends ExtensionCommon.ExtensionAPI {

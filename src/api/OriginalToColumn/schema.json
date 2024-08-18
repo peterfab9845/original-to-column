@@ -1,0 +1,33 @@
+[
+  {
+    "namespace": "OriginalToColumn",
+    "functions": [
+      {
+        "name": "addColumn",
+        "type": "function",
+        "description": "Add a custom column",
+        "async": false,
+        "parameters": [
+          {
+            "name": "label",
+            "type": "string",
+            "description": "The label for the column header."
+          },
+          {
+            "name": "tooltip",
+            "type": "string",
+            "description": "The on-hover tooltip for the column header."
+          }
+        ]
+      },
+      {
+        "name": "removeColumn",
+        "type": "function",
+        "description": "Remove a custom column",
+        "async": false,
+        "parameters": [
+        ]
+      }
+    ]
+  }
+]
